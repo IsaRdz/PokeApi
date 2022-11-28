@@ -3,10 +3,31 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-image: url(./assets/fondo.jpg);
+    background-attachment: fixed;
+}
 h1{
     text-align: center;
-    margin: 3vw;
-    color: sandybrown;
+    
+    color: whitesmoke;
+    font-weight: bolder;
+    text-shadow: 5px 5px 7px black;
+    padding: 2vw;
+    background-color: rgba(95, 158, 160, 0.452);
+}
+h2{
+    text-align: center;
+    color: cadetblue;
+    text-shadow: 1px 1px 2px gray;
+}
+h2::first-letter{
+    text-transform: uppercase;
+}
+p{
+    background-color: cadetblue;
+    color: whitesmoke;
+    text-align: center;
 }
 body{
     background-color: black;
@@ -17,47 +38,14 @@ body{
     justify-content: center;
 }
 .pokemon-card{
-    width: 250px;
-    border: 1px solid sandybrown;
-    background-color: sandybrown;
+    width: 18vw;
+    background-color: whitesmoke;
     border-radius: 20px;
     margin: 2vw;
     padding: 2vw;
+    box-shadow: 2px 2px 5px grey;
 }
-/*.slide{
-    display: none;
-}*/
-img{
-    vertical-align: middle;
-    width: 100%;
+.carousel-item > img{
+    margin: 0 auto;
+    padding: 0 1vw 0 1vw;
 }
-.slide-container{
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-}
-.next, .prev {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-.next{
-    right: 0;
-    border-radius: 0 3px 0 3px;
-}
-.next:hover, .prev:hover{
-    background-color: rgba(128, 128, 128, 0.475);
-}
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }

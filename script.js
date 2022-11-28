@@ -25,50 +25,37 @@ const showPokemones = (arrayPokemones) => {
     return (body += `
             <div class="pokemon-card">
             <h2>${pokemon.name}</h2>
-            <p>ID: ${pokemon.id}</p>
-            <div class="slide-container"> 
-                <div class="slide fade">
-                    <img src="${pokemon.sprites.front_default}" alt="front_default"></img>
-                </div>
-                <div class="slide fade">
-                    <img src="${pokemon.sprites.back_default}" alt="back_default"></img>
-                </div>
-                <div class="slide fade">
-                    <img src="${pokemon.sprites.front_shiny}" alt="front_shiny"></img>
-                </div>
-                <div class="slide fade">
-                    <img src="${pokemon.sprites.back_shiny}" alt="back_shiny"></img>
-                </div>
+            <p>#${pokemon.id}</p>
 
-                <a class="prev" onClick="plusSlides(-1)"> < </a>
-                <a class="next" onClick="plusSlides(1)"> > </a>
+            <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+               <img src="${pokemon.sprites.other.dream_world.front_default}" class="d-block w-75" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="${pokemon.sprites.front_default}" class="d-block w-75" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="${pokemon.sprites.back_default}" class="d-block w-75" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="${pokemon.sprites.front_shiny}" class="d-block w-75" alt="...">
+              </div>
+              <div class="carousel-item">
+              <img src="${pokemon.sprites.back_shiny}" class="d-block w-75" alt="...">
             </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
         `);
   });
   cardsContainer.innerHTML = body;
 };
-
-let slideIndex = 1;
-showSlides(slideIndex); 
-
-function plusSlides(n){
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n){
-  let i;
-  let slides = document.getElementById("slide");
-  if(n > slides.length){
-    slideIndex=1;
-  }
-  if(n < 1){
-    slideIndex = slides.length;
-  }
-  for(i=0; i<slides.length;i++){
-    slides[i].style.display="none"
-  }
-  slides[slideIndex-1].style.display = "block";
-}
-
-//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
