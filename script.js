@@ -17,12 +17,12 @@ let body = ``;
 
 const showPokemones = (arrayPokemones) => {
   const pokemones = arrayPokemones.map((pokemon) => {
-    console.log("ID: ", pokemon.id);
+    /*console.log("ID: ", pokemon.id);
     console.log("Name: ", pokemon.name);
-    console.log("sprites", pokemon.sprites);
+    console.log("sprites", pokemon.sprites);*/
 
     return (body += `
-            <div class="pokemon-card">
+          <div class="pokemon-card">
             <h2>${pokemon.name}</h2>
             <p>#${pokemon.id}</p>
             <div id="carouselExampleControls${pokemon.id}" class="carousel slide carousel-dark" data-bs-ride="carousel">
@@ -45,11 +45,11 @@ const showPokemones = (arrayPokemones) => {
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls${pokemon.id}" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+              <span class="visually-hidden"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls${pokemon.id}" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+              <span class="visually-hidden"></span>
             </button>
           </div>
         </div>
@@ -58,5 +58,23 @@ const showPokemones = (arrayPokemones) => {
   cardsContainer.innerHTML = body;
 };
 
+setTimeout( () =>{
+  const inputSearch = document.getElementById("input-search");
+  const listItems = document.querySelectorAll(".pokemon-card");
+  
+  console.log("listItems", listItems)
+  
+  inputSearch.addEventListener("keyup",(event) => {
+    console.log(event.target.value);
+  
+    listItems.forEach((body) => {
+      console.log(body.textContent)
+      
+      body.textContent.includes(event.target.value.toLowerCase())
+      ? listItems.classList.remove("hidden")
+      : listItems.classList.add("hidden")
+    })
+  })
+},2000)
 
 

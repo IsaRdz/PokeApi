@@ -49,8 +49,6 @@ body{
     margin: 0 auto;
     padding: 0 1vw 0 1vw;
 }
-.btn{
-    background-color: whitesmoke;
-    border: none;
-    
+.hidden{
+    display: none;
 }
