@@ -52,3 +52,11 @@ body{
 .hidden{
     display: none;
 }
+.form-control{
+    width: 30vw;
+    
+}
+.form-control::placeholder{
+    text-align: right;
+    
+}

@@ -68,11 +68,16 @@ setTimeout( () =>{
     console.log(event.target.value);
   
     listItems.forEach((body) => {
-      console.log(body.textContent)
+      //console.log(body.textContent)
       
-      body.textContent.includes(event.target.value.toLowerCase())
-      ? listItems.classList.remove("hidden")
-      : listItems.classList.add("hidden")
+      try{  
+        body.textContent.toLowerCase().includes(event.target.value.toLowerCase())
+        ? body.classList.remove("hidden")
+        : body.classList.add("hidden");
+
+      }catch(e){
+        console.log("Error: ", e.message)
+      }
     })
   })
 },2000)
