@@ -9,6 +9,7 @@ const getPokemones = async () => {
     arrayPokemones.push(getPokemon);
   }
   showPokemones(arrayPokemones);
+  displaySearch();
 };
 getPokemones();
 
@@ -58,7 +59,7 @@ const showPokemones = (arrayPokemones) => {
   cardsContainer.innerHTML = body;
 };
 
-setTimeout( () =>{
+const displaySearch = () =>{
   const inputSearch = document.getElementById("input-search");
   const listItems = document.querySelectorAll(".pokemon-card");
   
@@ -80,6 +81,10 @@ setTimeout( () =>{
       }
     })
   })
-},2000)
+}
+
+/*setTimeout( () =>{
+ 
+},2000)*/
 
 
